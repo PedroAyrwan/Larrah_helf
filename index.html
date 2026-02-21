@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Larah Helf - Assistência para Idosos</title>
+    
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", 
+                        "primary-dark": "#2563EB", 
+                        "navy": "#1A365D", 
+                        "background-light": "#F7FAFC",
+                        "background-dark": "#0f172a", 
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", 
+                        "xl": "3rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        /* Barra de rolagem */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F7FAFC; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1A365D; 
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3B82F6; 
+        }
+
+        /* Animações */
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+            will-change: transform;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-navy antialiased selection:bg-primary/30">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        
+        <header class="sticky top-0 z-50 w-full border-b border-navy/10 bg-white/90 backdrop-blur-md transition-all duration-300">
+            <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
+                <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
+                    <img src="logo.jpeg" alt="Logo Larah Helf" class="h-10 w-auto object-contain">
+                    <span class="text-2xl font-black tracking-tight text-navy">Larah Helf</span>
+                </div>
+                <a class="flex h-12 items-center gap-2 rounded-full bg-primary px-6 text-base font-bold text-white transition-all duration-300 active:scale-95 hover:bg-primary-dark hover:shadow-xl hover:-translate-y-0.5 shadow-lg shadow-primary/20" href="#contact">
+                    <span class="material-symbols-outlined filled">emergency</span>
+                    <span>SOS</span>
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-20">
+                        <div class="flex flex-1 flex-col gap-8 text-left z-10">
+                            <h1 class="text-4xl font-black leading-[1.1] tracking-tight text-navy sm:text-5xl lg:text-6xl">
+                                A tecnologia que cuida, <span class="text-primary relative inline-block">o carinho que permanece</span>
+                            </h1>
+                            <p class="text-lg font-medium leading-relaxed text-navy/80 sm:text-xl max-w-2xl">
+                                Assistência e medicação simplificada para quem você ama. A Larah Helf garante independência para idosos e tranquilidade para a família.
+                            </p>
+                            <div class="flex flex-col gap-4 sm:flex-row">
+                                <button class="flex h-14 w-full sm:w-auto items-center justify-center rounded-full bg-primary px-8 text-lg font-bold text-white shadow-xl shadow-primary/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-primary-dark active:translate-y-0 active:scale-95">
+                                    Conheça a Larah
+                                </button>
+                                <button class="flex h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-full border-2 border-navy/10 bg-white px-8 text-lg font-bold text-navy transition-all duration-300 hover:bg-navy/5 hover:border-navy/20">
+                                    <span class="material-symbols-outlined text-primary">play_circle</span>
+                                    Ver vídeo
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="relative flex-1 lg:h-auto z-10">
+                            <div class="aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] bg-navy/5 shadow-2xl ring-1 ring-navy/10 animate-float">
+                                <img alt="Larah Helf interagindo em ambiente confortável" class="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105" src="produto.jpg">
+                            </div>
+                            <div class="absolute -bottom-10 -right-10 -z-10 h-64 w-64 rounded-full bg-primary/30 blur-3xl animate-pulse"></div>
+                            <div class="absolute -top-10 -left-10 -z-10 h-64 w-64 rounded-full bg-navy/10 blur-3xl"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white py-20 lg:py-32 relative">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+                    <div class="mb-16 max-w-2xl">
+                        <h2 class="text-3xl font-black text-navy sm:text-4xl">Nossos Pilares</h2>
+                        <p class="mt-4 text-xl text-navy/70">Segurança, facilidade e cuidado em cada detalhe do design.</p>
+                    </div>
+                    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        <div class="group card-hover relative flex flex-col gap-6 rounded-[2rem] border border-navy/5 bg-background-light p-8 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 cursor-default">
+                            <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-primary shadow-sm ring-1 ring-navy/5 transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+                                <span class="material-symbols-outlined text-4xl">notifications_active</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-navy group-hover:text-primary transition-colors">Alertas Multimodais</h3>
+                                <p class="mt-2 text-lg leading-relaxed text-navy/70">
+                                    Avisos sonoros claros e sinais luminosos vibrantes. Impossível de ignorar, fácil de entender.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="group card-hover relative flex flex-col gap-6 rounded-[2rem] border border-navy/5 bg-background-light p-8 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 cursor-default">
+                            <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-primary shadow-sm ring-1 ring-navy/5 transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+                                <span class="material-symbols-outlined text-4xl">monitoring</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-navy group-hover:text-primary transition-colors">Monitoramento Real-time</h3>
+                                <p class="mt-2 text-lg leading-relaxed text-navy/70">
+                                    Acompanhe a rotina de medicação e bem-estar diretamente pelo app da família.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="group card-hover relative flex flex-col gap-6 rounded-[2rem] border border-navy/5 bg-background-light p-8 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 cursor-default">
+                            <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-primary shadow-sm ring-1 ring-navy/5 transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+                                <span class="material-symbols-outlined text-4xl">shield_person</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-navy group-hover:text-primary transition-colors">Segurança Máxima</h3>
+                                <p class="mt-2 text-lg leading-relaxed text-navy/70">
+                                    Botão de emergência integrado e proteção de dados com criptografia de ponta a ponta.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20 lg:py-32">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="overflow-hidden rounded-[2.5rem] bg-navy text-white shadow-2xl transition-transform hover:scale-[1.01] duration-500">
+                        <div class="flex flex-col lg:flex-row">
+                            <div class="relative min-h-[400px] flex-1 lg:min-h-full overflow-hidden">
+                                <img alt="Senhora idosa sorrindo usando tecnologia" class="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr7Maapuz1048sQpiHq89GlEj--lzfibVU8jiEfGJkjmVZMVhiYcl4FWU__Y-5FGp8QhORPZBqPEgKOZ8jtYqOr13JjMZK0T_Lien6ZRls84_6rH2uWThH__9yig9a7uce0lyRS8Sh-I5TRXRAc4k0sZPoMzJjwsCwB0kIcuWiTIlZBLBXCTbi0hJrD-GFLvm6Ygvb5JDBM1KtiSdB39vhkcI9mHz4A_4Y9S4z2YYxhRYrOLINod-QGxBVD4SdMnBtLPs0x3Ye-Q">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-navy/80 lg:to-navy"></div>
+                            </div>
+                            <div class="flex flex-1 flex-col justify-center gap-8 p-10 lg:p-20 relative z-10">
+                                <h2 class="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
+                                    Projetada para ser simples.
+                                </h2>
+                                <p class="text-xl font-medium leading-relaxed text-white/80">
+                                    A Larah não é apenas um robô, é uma companheira. Com interface de voz intuitiva e botões grandes, ela foi feita pensando exclusivamente nas necessidades da terceira idade. Sem menus complexos, apenas cuidado.
+                                </p>
+                                <div class="flex flex-wrap gap-4">
+                                    <div class="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm border border-white/10 hover:bg-white/20 transition-colors">
+                                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                                        <span>Comandos de Voz</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm border border-white/10 hover:bg-white/20 transition-colors">
+                                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                                        <span>Botões Táteis</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm border border-white/10 hover:bg-white/20 transition-colors">
+                                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                                        <span>Tela de Alto Contraste</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white py-20">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="mb-12 text-center">
+                        <h2 class="text-3xl font-black text-navy sm:text-4xl">Dados que reforçam o nosso cuidado</h2>
+                    </div>
+                    <div class="grid gap-6 md:grid-cols-3">
+                        <div class="flex flex-col items-center justify-center gap-4 rounded-[2rem] bg-background-light p-10 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 border border-transparent hover:border-primary/20">
+                            <span class="text-5xl font-black text-primary">50%</span>
+                            <p class="text-lg font-bold text-navy">Aumento na adesão<br>aos medicamentos</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center gap-4 rounded-[2rem] bg-navy p-10 text-center text-white shadow-xl shadow-navy/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <span class="text-5xl font-black text-primary relative z-10">1 em 3</span>
+                            <p class="text-lg font-bold relative z-10">Idosos precisam de<br>auxílio diário</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center gap-4 rounded-[2rem] bg-background-light p-10 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 border border-transparent hover:border-primary/20">
+                            <span class="text-5xl font-black text-primary">+80%</span>
+                            <p class="text-lg font-bold text-navy">Mais tranquilidade<br>para a família</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-background-light py-20">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="mb-12 text-center">
+                        <h2 class="text-3xl font-black text-navy sm:text-4xl">Pesquisa com Usuários: Como cuidamos hoje?</h2>
+                        <p class="mt-4 text-xl text-navy/70">Como você organiza sua rotina diária para o autocuidado ou cuidado de terceiros?</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center gap-10 lg:flex-row lg:gap-20">
+                        <div class="relative flex h-80 w-80 items-center justify-center rounded-full shadow-2xl transition-transform duration-500 hover:rotate-3 hover:scale-105" style="background: conic-gradient(
+                            #3B82F6 0% 31.4%, 
+                            #1E40AF 31.4% 59%, 
+                            #60A5FA 59% 76.1%, 
+                            #93C5FD 76.1% 93.2%,
+                            #1D4ED8 93.2% 100%
+                        );">
+                            <div class="flex h-56 w-56 flex-col items-center justify-center rounded-full bg-background-light p-6 text-center shadow-inner">
+                                <span class="block text-4xl font-black text-navy">105</span>
+                                <span class="text-sm font-bold text-navy/60 uppercase tracking-wider mt-1">Respostas</span>
+                            </div>
+                        </div>
+                        <div class="flex w-full max-w-md flex-col justify-center gap-4">
+                            <div class="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition-transform hover:translate-x-2 border border-transparent hover:border-[#3B82F6]/30">
+                                <div class="h-4 w-4 rounded-full bg-[#3B82F6] shadow-sm"></div>
+                                <div class="flex flex-1 items-center justify-between">
+                                    <span class="font-bold text-navy">Conto com a memória</span>
+                                    <span class="font-black text-navy">31.4%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition-transform hover:translate-x-2 border border-transparent hover:border-[#1E40AF]/30">
+                                <div class="h-4 w-4 rounded-full bg-[#1E40AF] shadow-sm"></div>
+                                <div class="flex flex-1 items-center justify-between">
+                                    <span class="font-bold text-navy">Uso aplicativos/digitais</span>
+                                    <span class="font-black text-navy">27.6%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition-transform hover:translate-x-2 border border-transparent hover:border-[#60A5FA]/30">
+                                <div class="h-4 w-4 rounded-full bg-[#60A5FA] shadow-sm"></div>
+                                <div class="flex flex-1 items-center justify-between">
+                                    <span class="font-bold text-navy">Uso agendas físicas</span>
+                                    <span class="font-black text-navy">17.1%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition-transform hover:translate-x-2 border border-transparent hover:border-[#93C5FD]/30">
+                                <div class="h-4 w-4 rounded-full bg-[#93C5FD] shadow-sm"></div>
+                                <div class="flex flex-1 items-center justify-between">
+                                    <span class="font-bold text-navy">Não tenho rotina organizada</span>
+                                    <span class="font-black text-navy">17.1%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition-transform hover:translate-x-2 border border-transparent hover:border-[#1D4ED8]/30">
+                                <div class="h-4 w-4 rounded-full bg-[#1D4ED8] shadow-sm"></div>
+                                <div class="flex flex-1 items-center justify-between">
+                                    <span class="font-bold text-navy">Peço ajuda a familiares</span>
+                                    <span class="font-black text-navy">6.8%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20 lg:py-32">
+                <div class="mx-auto max-w-4xl px-6 lg:px-8">
+                    <h2 class="mb-12 text-center text-3xl font-black text-navy sm:text-4xl">Perguntas Frequentes</h2>
+                    <div class="space-y-4">
+                        <details class="group rounded-2xl bg-white shadow-sm ring-1 ring-navy/5 open:bg-primary/5 open:ring-primary/20 transition-all duration-300">
+                            <summary class="flex w-full cursor-pointer items-center justify-between p-6 text-left text-lg font-bold text-navy marker:content-none hover:text-primary transition-colors">
+                                <span>É difícil de usar para quem não conhece tecnologia?</span>
+                                <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-lg leading-relaxed text-navy/70 animate-[fadeIn_0.3s_ease-in-out]">
+                                Absolutamente não. A Larah foi desenhada do zero pensando em quem nunca usou um smartphone. A interação é principalmente por voz e botões físicos grandes e iluminados.
+                            </div>
+                        </details>
+                        <details class="group rounded-2xl bg-white shadow-sm ring-1 ring-navy/5 open:bg-primary/5 open:ring-primary/20 transition-all duration-300">
+                            <summary class="flex w-full cursor-pointer items-center justify-between p-6 text-left text-lg font-bold text-navy marker:content-none hover:text-primary transition-colors">
+                                <span>Funciona sem internet?</span>
+                                <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-lg leading-relaxed text-navy/70 animate-[fadeIn_0.3s_ease-in-out]">
+                                Sim! As funções principais como alarmes de medicação e lembretes de voz funcionam 100% offline. A conexão é necessária apenas para atualizações e para enviar notificações ao app da família.
+                            </div>
+                        </details>
+                        <details class="group rounded-2xl bg-white shadow-sm ring-1 ring-navy/5 open:bg-primary/5 open:ring-primary/20 transition-all duration-300">
+                            <summary class="flex w-full cursor-pointer items-center justify-between p-6 text-left text-lg font-bold text-navy marker:content-none hover:text-primary transition-colors">
+                                <span>Como funciona o botão SOS?</span>
+                                <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-lg leading-relaxed text-navy/70 animate-[fadeIn_0.3s_ease-in-out]">
+                                Ao pressionar o botão SOS por 3 segundos, a Larah envia imediatamente uma notificação de alta prioridade para todos os contatos cadastrados no aplicativo da família, além de emitir um alerta sonoro local.
+                            </div>
+                        </details>
+                        <details class="group rounded-2xl bg-white shadow-sm ring-1 ring-navy/5 open:bg-primary/5 open:ring-primary/20 transition-all duration-300">
+                            <summary class="flex w-full cursor-pointer items-center justify-between p-6 text-left text-lg font-bold text-navy marker:content-none hover:text-primary transition-colors">
+                                <span>Qual a duração da bateria?</span>
+                                <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-lg leading-relaxed text-navy/70 animate-[fadeIn_0.3s_ease-in-out]">
+                                A Larah possui uma bateria de longa duração que aguenta até 48 horas fora da base de carregamento. Quando a bateria está baixa, ela avisa vocalmente para ser reconectada.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-navy text-white">
+            <div class="mx-auto max-w-7xl px-6 py-12 lg:py-16 lg:px-8">
+                <div class="grid gap-12 lg:grid-cols-3">
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer">
+                            <img src="logo.jpeg" alt="Logo Larah Helf" class="h-10 w-auto object-contain">
+                            <span class="text-2xl font-black tracking-tight">Larah Helf</span>
+                        </div>
+                        <p class="text-lg leading-relaxed text-white/70">
+                            Empoderando a terceira idade com tecnologia acessível, digna e carinhosa.
+                        </p>
+                        <div class="flex gap-4">
+                            <a class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors duration-300" href="https://www.instagram.com/larahhelf/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">
+                                <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06h.63zm1.418 2.003l-.35 1.954-1.571 6.082 5.093 1.57 1.57-5.094-1.57-6.082-3.172 1.57zm-5.83 8.35l-1.57 4.742 4.742 1.57 1.57-4.742-4.742-1.57z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-lg font-bold text-white relative inline-block after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-12 after:h-1 after:bg-primary after:rounded-full">Navegação</h3>
+                        <nav class="flex flex-col gap-3 text-white/70 mt-2">
+                            <a class="hover:text-primary transition-colors hover:translate-x-1 duration-300" href="#">Início</a>
+                            <a class="hover:text-primary transition-colors hover:translate-x-1 duration-300" href="#">Sobre a Larah</a>
+                            <a class="hover:text-primary transition-colors hover:translate-x-1 duration-300" href="#">Perguntas Frequentes</a>
+                            <a class="hover:text-primary transition-colors hover:translate-x-1 duration-300" href="#">Política de Privacidade</a>
+                        </nav>
+                    </div>
+                    <div class="flex flex-col gap-6" id="contact">
+                        <h3 class="text-lg font-bold text-white relative inline-block after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-12 after:h-1 after:bg-primary after:rounded-full">Precisa de ajuda agora?</h3>
+                        <p class="text-white/70 mt-2">Nossa equipe de suporte está disponível para emergências.</p>
+                        <a href="https://wa.me/5579996353412" target="_blank" rel="noopener noreferrer" class="flex w-full items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 py-4 text-lg font-bold text-white shadow-lg shadow-[#25D366]/20 transition-all duration-300 hover:bg-[#20b85a] hover:-translate-y-1 hover:shadow-[#25D366]/40 active:scale-95">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+                            Falar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-16 border-t border-white/10 pt-8 text-center text-sm text-white/50">
+                    <p>© 2026 Larah Helf Tecnologia Assistiva. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

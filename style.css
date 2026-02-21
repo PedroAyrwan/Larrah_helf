@@ -1,0 +1,48 @@
+/* style.css */
+
+/* Rolagem suave para toda a página ao clicar em links (como o botão SOS) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Garante a altura mínima correta do body */
+body {
+    min-height: max(884px, 100dvh);
+}
+
+/* Customização da Barra de Rolagem (Scrollbar) para combinar com a identidade visual */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F7FAFC; /* Cor background-light */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1A365D; /* Cor navy */
+    border-radius: 6px;
+    border: 3px solid #F7FAFC; /* Cria um "padding" interno visual */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f6ae55; /* Cor primary no hover */
+}
+
+/* Animação suave de flutuação para dar vida à imagem do produto */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+    will-change: transform;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
