@@ -108,8 +108,8 @@
                                 Assistência e medicação simplificada para quem você ama. A Larah Helf garante independência para idosos e tranquilidade para a família.
                             </p>
                             <div class="flex flex-col gap-4 sm:flex-row">
-                                <button class="flex h-14 w-full sm:w-auto items-center justify-center rounded-full bg-primary px-8 text-lg font-bold text-white shadow-xl shadow-primary/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-primary-dark active:translate-y-0 active:scale-95">
-                                    Conheça a Larah
+                                <button onclick="openModal()" class="flex h-14 w-full sm:w-auto items-center justify-center rounded-full bg-primary px-8 text-lg font-bold text-white shadow-xl shadow-primary/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-primary-dark active:translate-y-0 active:scale-95">
+                                    Já quero garantir!
                                 </button>
                                 <button class="flex h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-full border-2 border-navy/10 bg-white px-8 text-lg font-bold text-navy transition-all duration-300 hover:bg-navy/5 hover:border-navy/20">
                                     <span class="material-symbols-outlined text-primary">play_circle</span>
@@ -178,7 +178,7 @@
                     <div class="overflow-hidden rounded-[2.5rem] bg-navy text-white shadow-2xl transition-transform hover:scale-[1.01] duration-500">
                         <div class="flex flex-col lg:flex-row">
                             <div class="relative min-h-[400px] flex-1 lg:min-h-full overflow-hidden">
-                                <img alt="Senhora idosa sorrindo usando tecnologia" class="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr7Maapuz1048sQpiHq89GlEj--lzfibVU8jiEfGJkjmVZMVhiYcl4FWU__Y-5FGp8QhORPZBqPEgKOZ8jtYqOr13JjMZK0T_Lien6ZRls84_6rH2uWThH__9yig9a7uce0lyRS8Sh-I5TRXRAc4k0sZPoMzJjwsCwB0kIcuWiTIlZBLBXCTbi0hJrD-GFLvm6Ygvb5JDBM1KtiSdB39vhkcI9mHz4A_4Y9S4z2YYxhRYrOLINod-QGxBVD4SdMnBtLPs0x3Ye-Q">
+                                <img src="idosa.png" alt="Senhora idosa sorrindo" class="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-navy/80 lg:to-navy"></div>
                             </div>
                             <div class="flex flex-1 flex-col justify-center gap-8 p-10 lg:p-20 relative z-10">
@@ -377,5 +377,64 @@
             </div>
         </footer>
     </div>
+
+    <div id="modalGarantir" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <div class="absolute inset-0 bg-navy/80 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
+        
+        <div class="relative z-10 w-full max-w-lg scale-95 animate-[fadeIn_0.3s_ease-out_forwards] overflow-hidden rounded-[2rem] bg-navy p-8 text-left shadow-2xl border border-white/10 lg:p-10">
+            
+            <button onclick="closeModal()" class="absolute right-6 top-6 text-white/50 hover:text-white transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+
+            <div id="mensagemSucesso" class="hidden flex-col items-center justify-center py-6 text-center animate-[fadeIn_0.5s_ease-in-out]">
+                <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#20b85a]/20 text-[#25D366]">
+                    <span class="material-symbols-outlined text-4xl">check_circle</span>
+                </div>
+                <h3 class="mb-2 text-2xl font-black text-white">Reserva Confirmada!</h3>
+                <p class="text-white/70">Nossa equipe entrará em contato em breve pelo WhatsApp para priorizar o seu pedido.</p>
+                <button onclick="closeModal()" class="mt-8 rounded-full border border-white/20 px-8 py-3 font-bold text-white hover:bg-white/10 transition-colors">
+                    Fechar
+                </button>
+            </div>
+
+            <div id="conteudoFormulario" class="block">
+                <div class="mb-8 text-center">
+                    <h3 class="text-3xl font-black text-white">Garanta sua Larah</h3>
+                    <p class="mt-2 text-white/70">Deixe seus contatos e nossa equipe entrará em contato para priorizar seu pedido.</p>
+                </div>
+
+                <form id="formGarantir" class="flex flex-col gap-5">
+                    <div class="flex flex-col gap-1.5">
+                        <label class="ml-4 text-sm font-bold text-white/80" for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Ex: Pedro Ayrwan" 
+                            class="h-14 w-full rounded-full border border-white/10 bg-white/5 px-6 text-white placeholder-white/30 focus:border-primary focus:bg-white/10 focus:ring-1 focus:ring-primary outline-none transition-all">
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <label class="ml-4 text-sm font-bold text-white/80" for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="seu@email.com" 
+                            class="h-14 w-full rounded-full border border-white/10 bg-white/5 px-6 text-white placeholder-white/30 focus:border-primary focus:bg-white/10 focus:ring-1 focus:ring-primary outline-none transition-all">
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <label class="ml-4 text-sm font-bold text-white/80" for="whatsapp">WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(00) 00000-0000" 
+                            class="h-14 w-full rounded-full border border-white/10 bg-white/5 px-6 text-white placeholder-white/30 focus:border-primary focus:bg-white/10 focus:ring-1 focus:ring-primary outline-none transition-all">
+                    </div>
+
+                    <button type="submit" id="btnEnviar" class="mt-4 flex h-14 items-center justify-center gap-3 rounded-full bg-primary text-lg font-bold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-dark hover:-translate-y-0.5 active:translate-y-0 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none">
+                        <span id="textoBotao">Enviar e Reservar</span>
+                        <svg id="spinnerBotao" class="hidden h-5 w-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
